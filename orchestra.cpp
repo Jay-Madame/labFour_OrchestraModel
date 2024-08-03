@@ -1,19 +1,21 @@
-#include "songChoice.h"
-#include "newWorldSymphony.h"
-#include "jupiter.h"
+#include "orchestra.h"
+#include <iostream>
 
-int main() {
-    // Create instances of NewWorldSymphony and Jupiter
-    NewWorldSymphony* nws = new NewWorldSymphony();
-    Jupiter* jup = new Jupiter();
+Orchestra::Orchestra() : conductor() {}
 
-    // Create an instance of SongChoice
-    SongChoice playlist;
-    playlist.addSong(nws);  // Add existing song objects
-    playlist.addSong(jup);
+void Orchestra::addSong(Song *song)
+{
+    songChoice.addSong(song);
+    conductor.addToConcertTime(song->getRunTime());
+}
 
-    // Display all songs
-    playlist.displayAllSongs();
+void Orchestra::displayConcert() const
+{
+    songChoice.displayAllSongs();
+    std::cout << "Concert Runtime: " << conductor.getConcertRunTime() << std::endl;
+}
 
-    return 0;
+void Orchestra::setConductor(const Conductor &cond)
+{
+    conductor = cond;
 }

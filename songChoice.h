@@ -1,23 +1,16 @@
-#ifndef SONGCHOICE_H
-#define SONGCHOICE_H
+#pragma once
 
 #include <vector>
-#include "time.h"
-#include "newWorldSymphony.h"
-#include "jupiter.h"
+#include "song.h"
 
-class SongChoice
-{
+class SongChoice {
 public:
     SongChoice() = default;
     ~SongChoice();
 
-    void addSong(NewWorldSymphony *song);
-    void addSong(Jupiter *song);
+    void addSong(Song* song);
     void displayAllSongs() const;
 
 private:
-    std::vector<NewWorldSymphony *> newWorldSongs;
-    std::vector<Jupiter *> jupiterSongs;
+    std::vector<Song*> songs;
 };
-#endif

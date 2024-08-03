@@ -3,36 +3,20 @@
 
 SongChoice::~SongChoice()
 {
-    for (auto &song : newWorldSongs)
-    {
-        delete song;
-    }
-    for (auto &song : jupiterSongs)
+    for (Song *song : songs)
     {
         delete song;
     }
 }
 
-void SongChoice::addSong(NewWorldSymphony *song)
+void SongChoice::addSong(Song *song)
 {
-    newWorldSongs.push_back(song);
-}
-
-void SongChoice::addSong(Jupiter *song)
-{
-    jupiterSongs.push_back(song);
+    songs.push_back(song);
 }
 
 void SongChoice::displayAllSongs() const
 {
-    std::cout << "New World Symphony Songs:\n";
-    for (const auto &song : newWorldSongs)
-    {
-        song->display();
-    }
-
-    std::cout << "\nJupiter Songs:\n";
-    for (const auto &song : jupiterSongs)
+    for (Song *song : songs)
     {
         song->display();
     }

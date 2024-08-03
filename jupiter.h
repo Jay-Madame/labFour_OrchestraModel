@@ -4,12 +4,12 @@
     [ ] displays the runtime of the song
 */
 
-#ifndef JUPITER_H
-#define JUPITER_H
+#pragma once
 #include "SongChoice.h"
+#include "song.h"
 #include "time.h"
 
-class Jupiter : public SongChoice
+class Jupiter : public Song
 {
 private:
     int tempoOfSong;
@@ -22,4 +22,3 @@ public:
     virtual void display();
     Time getRunTime();
 };
-#endif
