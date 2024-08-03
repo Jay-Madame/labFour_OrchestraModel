@@ -1,5 +1,6 @@
-#pragma once
-#include "songChoice.h"
+#ifndef NEWWORLDSYMPHONY_H
+#define NEWWORLDSYMPHONY_H
+#include "SongChoice.h"
 #include "time.h"
 
 class NewWorldSymphony : public SongChoice
@@ -15,3 +16,4 @@ public:
     virtual void display();
     Time getRunTime();
 };
+#endif

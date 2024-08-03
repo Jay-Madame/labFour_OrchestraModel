@@ -1,11 +1,38 @@
 #include "songChoice.h"
+#include <iostream>
+
 SongChoice::~SongChoice()
 {
-    delete program;
+    for (auto &song : newWorldSongs)
+    {
+        delete song;
+    }
+    for (auto &song : jupiterSongs)
+    {
+        delete song;
+    }
 }
-static void SongChoicedisplayAllSongs()
+
+void SongChoice::addSong(NewWorldSymphony *song)
 {
-    for (auto &*song : program)
+    newWorldSongs.push_back(song);
+}
+
+void SongChoice::addSong(Jupiter *song)
+{
+    jupiterSongs.push_back(song);
+}
+
+void SongChoice::displayAllSongs() const
+{
+    std::cout << "New World Symphony Songs:\n";
+    for (const auto &song : newWorldSongs)
+    {
+        song->display();
+    }
+
+    std::cout << "\nJupiter Songs:\n";
+    for (const auto &song : jupiterSongs)
     {
         song->display();
     }

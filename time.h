@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TIME_H
+#define TIME_H
 #include <cstdlib>
 #include <ostream>
 
@@ -12,7 +13,7 @@ public:
     Time(int h, int m, int s);
     Time(int h, int m);
     void simplify();
-    
+
     int getHours() const;
     int getMinutes() const;
     int getSeconds() const;
@@ -35,3 +36,4 @@ public:
     //int conversion
     operator int();
 };
+#endif
