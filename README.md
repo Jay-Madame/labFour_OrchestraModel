@@ -37,10 +37,10 @@ __Create a system model for a topic__
     [ ] displays composer
     [ ] displays runtime of the song
 
-[ ] Time
-    [ ] takes in hours, minutes, and seconds
-    [ ] simplifies if there is a certain amount of minutes/seconds over to be correct format
-    [ ] Prints out in hours:minutes:seconds
+[x] Time
+    [x] takes in hours, minutes, and seconds
+    [x] simplifies if there is a certain amount of minutes/seconds over to be correct format
+    [x] Prints out in hours:minutes:seconds
         ex - "9:40:06"
 
 [ ] Instrument (parent)
