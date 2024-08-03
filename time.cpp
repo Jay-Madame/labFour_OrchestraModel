@@ -47,14 +47,6 @@ Time Time::operator+(Time &right) {
     return tempTime;
 }
 
-Time Time::operator-(Time &right) {
-    Time tempTime;
-    tempTime.hours = this->hours - right.hours;
-    tempTime.minutes = this->minutes - right.minutes;
-    tempTime.seconds = this->seconds - right.seconds;
-    tempTime.simplify();
-    return tempTime;
-}
 
 Time Time::operator++() {
     seconds++;
@@ -69,43 +61,6 @@ Time Time::operator++(int) {
     return oldTime;
 }
 
-Time Time::operator--() {
-    seconds--;
-    this->simplify();
-    return *this;
-}
-
-Time Time::operator--(int) {
-    Time oldTime = *this;
-    seconds--;
-    simplify();
-    return oldTime;
-}
-
-bool Time::operator<(Time &right) {
-    if (this->hours < right.hours)
-        return true;
-    else if (this->hours == right.hours)
-        if (this->minutes < right.minutes)
-            return true;
-        else if (this->minutes == right.minutes)
-            if (this->seconds < right.seconds)
-                return true;
-    return false;
-}
-
-bool Time::operator>(Time &right) {
-    if (this->hours > right.hours)
-        return true;
-    else if (this->hours == right.hours)
-        if (this->minutes > right.minutes)
-            return true;
-        else if (this->minutes == right.minutes)
-            if (this->seconds > right.seconds)
-                return true;
-    return false;
-}
-
 Time::operator int() {
     int totalSeconds = 0;
     totalSeconds = seconds + 60 * (minutes + 60 * hours);
@@ -113,8 +68,8 @@ Time::operator int() {
 }
 
 std::ostream &operator<<(std::ostream &strm, const Time &obj) {
-    strm << obj.getHours() << ":"
-         << (obj.getMinutes() < 10 ? "0" : "") << obj.getMinutes() << ":"
-         << (obj.getSeconds() < 10 ? "0" : "") << obj.getSeconds();
+    strm << obj.hours << ":"
+         << (obj.minutes < 10 ? "0" : "") << obj.minutes << ":"
+         << (obj.seconds < 10 ? "0" : "") << obj.seconds;
     return strm;
 }

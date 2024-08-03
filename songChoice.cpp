@@ -1,9 +1,7 @@
 #include "songChoice.h"
-#include <iostream>
-
 SongChoice::~SongChoice()
 {
-    for (Song *song : songs)
+    for (auto song : program)
     {
         delete song;
     }
@@ -11,12 +9,12 @@ SongChoice::~SongChoice()
 
 void SongChoice::addSong(Song *song)
 {
-    songs.push_back(song);
+    program.push_back(song);
 }
 
 void SongChoice::displayAllSongs() const
 {
-    for (Song *song : songs)
+    for (const auto &song : program)
     {
         song->display();
     }

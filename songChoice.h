@@ -3,14 +3,13 @@
 #include <vector>
 #include "song.h"
 
-class SongChoice {
-public:
-    SongChoice() = default;
-    ~SongChoice();
-
-    void addSong(Song* song);
-    void displayAllSongs() const;
-
+class SongChoice
+{
 private:
-    std::vector<Song*> songs;
+    std::vector<Song *> program;
+
+public:
+    ~SongChoice();
+    void addSong(Song *song);
+    void displayAllSongs() const;
 };
