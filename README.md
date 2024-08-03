@@ -11,7 +11,7 @@ __Create a system model for a topic__
 ### Must include: 
 [ ] Five classes
     [ ] Two must be aggregate relationships
-    [ ] Threee must be inheritance relationships
+    [ ] Three must be inheritance relationships
 [ ] A polymorphic variable
 [ ] Multiple classes and files
 [ ] Classes must be separated
