@@ -21,7 +21,7 @@ private:
 public:
     Conductor();
     void addToConcertTime(Time obj);
-    Time getConcertRunTime();
+    Time getConcertRunTime() const;
     std::string crescendo();
     std::string decrescendo();
     int getTempoCurrently();

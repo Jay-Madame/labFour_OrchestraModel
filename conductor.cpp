@@ -1,4 +1,5 @@
 #include "conductor.h"
+#include <algorithm>
 
 Conductor::Conductor() {
     volumeOrch.push_back("pianissimo");
@@ -14,7 +15,7 @@ void Conductor::addToConcertTime(Time obj) {
     concertRuntime = concertRuntime + obj;
 }
 
-Time Conductor::getConcertRunTime() {
+Time Conductor::getConcertRunTime() const {
     return concertRuntime;
 }
 
