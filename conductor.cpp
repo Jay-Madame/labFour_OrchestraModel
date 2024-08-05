@@ -1,7 +1,12 @@
 #include "conductor.h"
 #include <algorithm>
 
-Conductor::Conductor() {
+Conductor::Conductor() : Conductor("Bernard Haitink")
+{
+}
+
+Conductor::Conductor(std::string nm) : name(nm)
+{
     volumeOrch.push_back("pianissimo");
     volumeOrch.push_back("piano");
     volumeOrch.push_back("mezzo-piano");
@@ -11,26 +16,36 @@ Conductor::Conductor() {
     volume = volumeOrch[4];
 }
 
-void Conductor::addToConcertTime(Time obj) {
+void Conductor::addToConcertTime(Time obj)
+{
     concertRuntime = concertRuntime + obj;
 }
 
-Time Conductor::getConcertRunTime() const {
+Time Conductor::getConcertRunTime() const
+{
     return concertRuntime;
 }
 
-std::string Conductor::crescendo() {
+std::string Conductor::crescendo()
+{
     auto it = std::find(volumeOrch.begin(), volumeOrch.end(), volume);
-    if (it != volumeOrch.end() && (it + 1) != volumeOrch.end()) {
+    if (it != volumeOrch.end() && (it + 1) != volumeOrch.end())
+    {
         volume = *(it + 1);
     }
     return volume;
 }
 
-std::string Conductor::decrescendo() {
+std::string Conductor::decrescendo()
+{
     auto it = std::find(volumeOrch.begin(), volumeOrch.end(), volume);
-    if (it != volumeOrch.end() && it != volumeOrch.begin()) {
+    if (it != volumeOrch.end() && it != volumeOrch.begin())
+    {
         volume = *(it - 1);
     }
     return volume;
+}
+
+std::string Conductor::getConductor() const{
+    return name;
 }

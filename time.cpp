@@ -5,7 +5,7 @@ Time::Time() : Time(0, 0, 0) {}
 
 Time::Time(int h, int m, int s) : hours(h), minutes(m), seconds(s) {}
 
-Time::Time(int h, int m) : Time(h, m, 0) {}
+Time::Time(int m, int s) : Time(0, m, s) {}
 
 void Time::simplify() {
     if (seconds >= 60) {

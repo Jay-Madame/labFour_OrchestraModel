@@ -1,7 +1,7 @@
 #include "LeCygne.h"
 #include <iostream>
 
-LeCygne::LeCygne() : LeCygne(94, "metzo-piano", Time(43, 51)) {}
+LeCygne::LeCygne() : LeCygne(94, "metzo-piano", Time(3, 28)) {}
 LeCygne::LeCygne(int tempo, std::string volume, Time rtime) : tempoOfSong(tempo), volumeOfSong(volume), runtime(rtime) {}
 void LeCygne::display()
 {

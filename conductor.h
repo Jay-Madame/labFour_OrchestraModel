@@ -14,15 +14,18 @@ class Conductor
 {
 private:
     Time concertRuntime;
-    std::vector <std::string> volumeOrch;
+    std::vector<std::string> volumeOrch;
     int tempoCurrently;
     std::string volume;
+    std::string name;
 
 public:
     Conductor();
+    Conductor(std::string nm);
     void addToConcertTime(Time obj);
     Time getConcertRunTime() const;
     std::string crescendo();
     std::string decrescendo();
     int getTempoCurrently();
+    std::string getConductor() const;
 };

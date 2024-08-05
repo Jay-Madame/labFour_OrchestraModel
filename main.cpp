@@ -10,6 +10,10 @@
 #include "leCygne.cpp"
 #include "songChoice.h"
 #include "songChoice.cpp"
+#include "song.cpp"
+#include "song.h"
+#include "time.cpp"
+#include "time.h"
 
 int main()
 {
@@ -23,13 +27,14 @@ int main()
     orchestra.addSong(jup);
     orchestra.addSong(swan);
 
-    Conductor conductor;
+    Conductor conductor("Gustavo Dudamel");
+    
+
     orchestra.setConductor(conductor);
 
-    orchestra.displayConcert();
+    std::cout << orchestra;
 
-    SongChoice displayProgram;
-    displayProgram.displayAllSongs();
+    orchestra.displayConcert();
 
     return 0;
 }

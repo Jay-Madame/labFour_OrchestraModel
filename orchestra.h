@@ -2,6 +2,7 @@
 
 #include "songChoice.h"
 #include "conductor.h"
+#include <ostream>
 
 class Orchestra
 {
@@ -13,5 +14,7 @@ public:
     Orchestra();
     void addSong(Song *song);
     void displayConcert() const;
-    void setConductor(const Conductor &cond);
+    void setConductor(Conductor newConduct);
+    std::string getConductor() const;
+    friend std::ostream &operator<<(std::ostream &strm, const Orchestra &obj);
 };
